@@ -1,0 +1,33 @@
+@extends('layouts.app')
+
+@section('title', 'Profile picture')
+
+@section('content')
+<main class="container" id="content">
+
+    @if ($member->picture)
+
+        <section class="header"><h1>Delete picture</h1></section>
+        <form action="{{ url('member-edit-picture') }}" method="POST" class="form-membership">
+            @csrf
+            <p class="center">Click delete to remove your profile picture: <br><img src="{{ asset('uploads/' . $member->picture) }}" alt="{{ $member->forename }}" class="profile"></p>
+            <input type="submit" name="delete" value="delete" class="btn btn-primary" />
+            <a href="{{ url('member/' . $member->id) }}" class="btn btn-danger">cancel</a>
+        </form>
+
+    @else
+
+        <section class="header"><h1>Upload picture</h1></section>
+        <form action="{{ url('member-edit-picture') }}" method="POST" enctype="multipart/form-data" class="form-membership">
+            @csrf
+            @if ($errors->any())<div class="alert alert-danger">{{ $errors->first() }}</div>@endif
+            <div class="form-group">
+                <label for="image">Select profile picture:</label>
+                <input type="file" name="image" id="image" />
+            </div>
+            <input type="submit" name="upload" value="Upload" class="btn btn-primary" />
+        </form>
+
+    @endif
+</main>
+@endsection

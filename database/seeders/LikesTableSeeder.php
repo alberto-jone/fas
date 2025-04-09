@@ -1,0 +1,105 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+class LikesTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        DB::table('likes')->insert([
+            ['article_id' => 2, 'member_id' => 1],
+            ['article_id' => 4, 'member_id' => 1],
+            ['article_id' => 13, 'member_id' => 1],
+            ['article_id' => 15, 'member_id' => 1],
+            ['article_id' => 16, 'member_id' => 1],
+            ['article_id' => 18, 'member_id' => 1],
+            ['article_id' => 20, 'member_id' => 1],
+            ['article_id' => 21, 'member_id' => 1],
+            ['article_id' => 23, 'member_id' => 1],
+            ['article_id' => 24, 'member_id' => 1],
+            ['article_id' => 26, 'member_id' => 1],
+            ['article_id' => 28, 'member_id' => 1],
+            ['article_id' => 29, 'member_id' => 1],
+            ['article_id' => 30, 'member_id' => 1],
+            ['article_id' => 31, 'member_id' => 1],
+            ['article_id' => 1, 'member_id' => 3],
+            ['article_id' => 7, 'member_id' => 3],
+            ['article_id' => 9, 'member_id' => 3],
+            ['article_id' => 10, 'member_id' => 3],
+            ['article_id' => 13, 'member_id' => 3],
+            ['article_id' => 14, 'member_id' => 3],
+            ['article_id' => 19, 'member_id' => 3],
+            ['article_id' => 22, 'member_id' => 3],
+            ['article_id' => 24, 'member_id' => 3],
+            ['article_id' => 27, 'member_id' => 3],
+            ['article_id' => 30, 'member_id' => 3],
+            ['article_id' => 31, 'member_id' => 3],
+            ['article_id' => 19, 'member_id' => 4],
+            ['article_id' => 23, 'member_id' => 4],
+            ['article_id' => 13, 'member_id' => 5],
+            ['article_id' => 16, 'member_id' => 5],
+            ['article_id' => 19, 'member_id' => 5],
+            ['article_id' => 22, 'member_id' => 5],
+            ['article_id' => 24, 'member_id' => 5],
+            ['article_id' => 1, 'member_id' => 6],
+            ['article_id' => 12, 'member_id' => 6],
+            ['article_id' => 15, 'member_id' => 6],
+            ['article_id' => 21, 'member_id' => 6],
+            ['article_id' => 23, 'member_id' => 6],
+            ['article_id' => 31, 'member_id' => 6],
+            ['article_id' => 10, 'member_id' => 7],
+            ['article_id' => 11, 'member_id' => 7],
+            ['article_id' => 19, 'member_id' => 7],
+            ['article_id' => 23, 'member_id' => 7],
+            ['article_id' => 30, 'member_id' => 7],
+            ['article_id' => 2, 'member_id' => 8],
+            ['article_id' => 4, 'member_id' => 8],
+            ['article_id' => 5, 'member_id' => 8],
+            ['article_id' => 6, 'member_id' => 8],
+            ['article_id' => 9, 'member_id' => 8],
+            ['article_id' => 17, 'member_id' => 8],
+            ['article_id' => 18, 'member_id' => 8],
+            ['article_id' => 23, 'member_id' => 8],
+            ['article_id' => 25, 'member_id' => 8],
+            ['article_id' => 28, 'member_id' => 8],
+            ['article_id' => 29, 'member_id' => 8],
+            ['article_id' => 9, 'member_id' => 9],
+            ['article_id' => 10, 'member_id' => 9],
+            ['article_id' => 11, 'member_id' => 9],
+            ['article_id' => 19, 'member_id' => 9],
+            ['article_id' => 20, 'member_id' => 9],
+            ['article_id' => 21, 'member_id' => 9],
+            ['article_id' => 23, 'member_id' => 9],
+            ['article_id' => 24, 'member_id' => 9],
+            ['article_id' => 26, 'member_id' => 9],
+            ['article_id' => 9, 'member_id' => 10],
+            ['article_id' => 18, 'member_id' => 10],
+            ['article_id' => 20, 'member_id' => 10],
+            ['article_id' => 23, 'member_id' => 10],
+            ['article_id' => 25, 'member_id' => 10],
+            ['article_id' => 9, 'member_id' => 11],
+            ['article_id' => 17, 'member_id' => 11],
+            ['article_id' => 21, 'member_id' => 11],
+            ['article_id' => 22, 'member_id' => 11],
+            ['article_id' => 31, 'member_id' => 11],
+            ['article_id' => 9, 'member_id' => 12],
+            ['article_id' => 10, 'member_id' => 12],
+            ['article_id' => 11, 'member_id' => 12],
+            ['article_id' => 17, 'member_id' => 12],
+            ['article_id' => 19, 'member_id' => 12],
+            ['article_id' => 21, 'member_id' => 12],
+            ['article_id' => 23, 'member_id' => 12],
+            ['article_id' => 26, 'member_id' => 12],
+            ['article_id' => 30, 'member_id' => 12],
+            ['article_id' => 31, 'member_id' => 12],
+        ]);
+    }
+}
