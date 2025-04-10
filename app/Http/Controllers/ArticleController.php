@@ -62,7 +62,9 @@ class ArticleController extends Controller
 
         if (Session::getId() > 0) {
             // Verifica se o membro logado curtiu este artigo usando o relacionamento
-            $liked = $article->likedBy()->where('member_id', Session::getId())->exists();
+            $liked = $article->likedBy()
+                ->wherePivot('member_id', Session::getId())
+                ->exists();
         }
 
         return view('article', [

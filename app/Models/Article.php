@@ -12,6 +12,8 @@ class Article extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'article_id'; // Informa ao Eloquent qual é a chave primária
+
     protected $fillable = [
         'category_id',
         'title',

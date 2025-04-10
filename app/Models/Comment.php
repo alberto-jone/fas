@@ -24,6 +24,10 @@ class Comment extends Model
     public $incrementing = false; // Se a chave primária não for auto-incremento
     protected $keyType = 'integer'; // Ou o tipo da sua chave primária
 
+    protected $casts = [
+        'posted' => 'datetime', // Adicione esta linha para converter 'posted' em DateTime
+    ];
+
     /**
      * Define o relacionamento com o artigo ao qual o comentário pertence (articles).
      * Um comentário pertence a um artigo.
