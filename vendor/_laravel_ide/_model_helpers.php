@@ -1559,6 +1559,8 @@ namespace App\Models {
     /**
      * App\Models\Member
      *
+     * @property \Illuminate\Support\Carbon|null $created_at
+     * @property \Illuminate\Support\Carbon|null $updated_at
      * @property string $role
      * @property string|null $picture
      * @property string $joined
@@ -1581,6 +1583,8 @@ namespace App\Models {
      * @method static \Illuminate\Database\Eloquent\Builder<Member>|Member whereJoined($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Member>|Member wherePicture($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Member>|Member whereRole($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Member>|Member whereUpdatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Member>|Member whereCreatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Member>|Member newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Member>|Member newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<Member>|Member query()

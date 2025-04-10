@@ -21,11 +21,15 @@
                     <a href="{{ url('login') }}" class="nav-item nav-link">Log in</a> /
                     <a href="{{ url('register') }}" class="nav-item nav-link">Register</a>
                 @else
-                    <a href="{{ url('member/' . session('id')) }}">{{ session('forename') }}</a> /
+                    <a href="{{ url('member/' . session('id')) }}" class="nav-item nav-link">{{ session('forename') }}</a> /
+                    <a href="{{ url('member/' . session('id')) }}" class="nav-item nav-link">Profile</a> /
                     @if (session('role') == 'admin')
-                        <a href="{{ url('admin/index') }}">Admin</a> /
+                        <a href="{{ url('admin/index') }}" class="nav-item nav-link">Admin</a> /
                     @endif
-                    <a href="{{ url('logout') }}">Logout</a>
+                    <form method="POST" action="{{ route('member.logout') }}">
+                        @csrf
+                        <button type="submit" class="nav-item nav-link" style="border:none; background:none; padding:0; margin:0; cursor:pointer;">Logout</button>
+                    </form>
                 @endif
             </div>
         </nav>
@@ -42,9 +46,9 @@
                         @if ($link->navigation == 1)
                             <li>
                                 <a href="{{ url('category/' . $link->category_id . '/' . $link->seo_name) }}"
-                                   @isset($section)
-                                       @if ($section == $link->category_id) class="on" @endif
-                                   @endisset
+                                    @isset($section)
+                                        @if ($section == $link->category_id) class="on" @endif
+                                    @endisset
                                 >
                                     {{ $link->name }}
                                 </a>
@@ -58,7 +62,8 @@
                     </li>
                 </ul>
             </nav>
-        </div></header>
+        </div>
+    </header>
     @yield('content')
     <footer>
         <div class="container">
