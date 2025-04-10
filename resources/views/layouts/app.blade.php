@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
     <link rel="shortcut icon" type="image/png" href="{{ asset('img/favicon.ico') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('') }}"> --}}
+
 </head>
 <body>
     <header>
@@ -39,8 +41,11 @@
                     @foreach ($navigation as $link)
                         @if ($link->navigation == 1)
                             <li>
-                                <a href="{{ url('category/' . $link->id . '/' . $link->seo_name) }}"
-                                    @if ($section == $link->id) class="on" @endif>
+                                <a href="{{ url('category/' . $link->category_id . '/' . $link->seo_name) }}"
+                                   @isset($section)
+                                       @if ($section == $link->category_id) class="on" @endif
+                                   @endisset
+                                >
                                     {{ $link->name }}
                                 </a>
                             </li>
