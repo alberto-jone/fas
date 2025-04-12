@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', 'Creative Folk')</title>
-    <meta name="description" content="@yield('description', 'Hire creatives')">
+    <title>Meu Perfil - Creative Folk</title>
+    <meta name="description" content="Página de perfil de membro Creative Folk">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/profile.css') }}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
     <link rel="shortcut icon" type="image/png" href="{{ asset('img/favicon.ico') }}">
-    {{-- <link rel="stylesheet" href="{{ asset('') }}"> --}}
-
 </head>
 <body>
     <header>
@@ -26,11 +25,8 @@
                     @if (Auth::guard('member')->user()->role == 'admin')
                         <a href="{{ url('admin/index') }}" class="nav-item nav-link">Admin</a> /
                     @endif
-
                     <form method="POST" action="{{ route('member.logout') }}">
                         @csrf
-                        {{-- <h2>Teste</h2> --}}
-                        {{-- <button type="submit" class="nav-item nav-link" style="border:none; background:none; padding:0; margin:0; cursor:pointer;">Logout</button> --}}
                         <input type="submit" value="Logout" class="nav-item nav-link btn btn-sm btn-link">
                     </form>
                 @endif
@@ -67,7 +63,45 @@
             </nav>
         </div>
     </header>
-    @yield('content')
+
+    <div class="container content-wrapper">
+        <main id="content">
+            <section class="profile-section">
+                <h1>Meu Perfil</h1>
+
+                <div class="profile-info">
+                    <div class="profile-avatar">
+                        <img src="{{ asset('img/default-avatar.png') }}" alt="Avatar do Usuário">
+                    </div>
+
+                    <div class="profile-details">
+                        <p><strong>Nome:</strong> {{ Auth::guard('member')->user()->forename }} {{ Auth::guard('member')->user()->surname ?? '' }}</p>
+                        <p><strong>Email:</strong> {{ Auth::guard('member')->user()->email }}</p>
+                        <p><strong>Membro desde:</strong> {{ Auth::guard('member')->user()->created_at->format('d/m/Y') }}</p>
+                    </div>
+                </div>
+
+                <div class="profile-actions">
+                    <h2>Ações</h2>
+                    <ul>
+                        <li><a href="{{ route('member.profile.edit') }}">Editar Perfil</a></li>
+                        <li><a href="#">Minhas Publicações</a></li>
+                        <li><a href="#">Mensagens</a></li>
+                    </ul>
+                </div>
+
+                <div class="profile-settings">
+                    <h2>Configurações</h2>
+                    <ul>
+                        <li><a href="{{ route('member.password.edit') }}">Alterar Senha</a></li>
+                        <li><a href="#">Notificações</a></li>
+                        <li><a href="#">Privacidade</a></li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
     <footer>
         <div class="container">
             <a href="{{ url('contact') }}">Contact us</a>

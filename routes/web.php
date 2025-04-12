@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\ProfileController; // Adicione esta linha
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('category/{id}/{seoName}', [CategoryController::class, 'show'])->name('category.show');
@@ -29,6 +30,12 @@ Route::middleware('guest:member')->group(function () {
 Route::middleware('auth:member')->group(function () {
     Route::post('/logout', [LoginController::class, 'logout'])->name('member.logout');
     Route::get('/dashboard', [HomeController::class, 'index'])->name('member.dashboard'); // Ajuste a rota do dashboard conforme necessário
+    // Rotas para a página de perfil
+    Route::get('/member/profile', [ProfileController::class, 'show'])->name('member.profile');
+    Route::get('/member/profile/edit', [ProfileController::class, 'edit'])->name('member.profile.edit');
+    Route::post('/member/profile/update', [ProfileController::class, 'update'])->name('member.profile.update');
+    Route::get('/member/password/edit', [ProfileController::class, 'editPassword'])->name('member.password.edit');
+    Route::post('/member/password/update', [ProfileController::class, 'updatePassword'])->name('member.password.update');
 });
 
 // Mantenha a rota padrão /home se você ainda a estiver usando para outros propósitos
