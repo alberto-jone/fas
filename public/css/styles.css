@@ -98,7 +98,7 @@ article.summary p {
 nav li {
   font-weight: 700;
   line-height: 0.8em;
-} 
+}
 
 .center {
   text-align: center;
@@ -163,6 +163,13 @@ header button:hover {
   cursor: pointer;
 }
 
+
+.span-profile{
+    padding:5px 20px 5px 20px !important;
+    color:#fff !important;
+    /* height:10px !important; */
+    background-color:#575252;
+}
 header nav ul {
   padding: .5rem 0 0.1rem 0;
   margin: 0;
@@ -252,7 +259,7 @@ nav .search-text {
 
   header nav {
     flex: 2;
-  } 
+  }
 
   header button {
     display: none;
@@ -321,7 +328,7 @@ footer {
 /* 4:    LAYOUT       */
 /**********************/
 
-.container {    
+.container {
   margin: 0 auto 0 auto;
   max-width: 94%;
 }
@@ -347,7 +354,7 @@ footer {
   main.article,
   .admin-article {
     display: grid;
-    grid-gap: 2em;   
+    grid-gap: 2em;
     grid-template-columns: calc(66.666% - 2em) 33.333%;
     margin-bottom: 2em;
   }
@@ -356,7 +363,7 @@ footer {
 main img {
   width: 100%;
   height: auto;
-  border-radius: 8px; 
+  border-radius: 8px;
 }
 
 article.summary img {
@@ -376,8 +383,8 @@ article.summary p {
   margin: 0 0 1.2em 0;
 }
 
-.text h1 {    
-  margin-bottom: .5em;    
+.text h1 {
+  margin-bottom: .5em;
 }
 
 .text .content {
@@ -449,13 +456,13 @@ button, input, optgroup, select, textarea {
 }
 
 
-.btn-primary {    
-  background-color: #295073;    
-  border-color: #295073;    
-}   
-.btn-primary:hover {    
-  background-color: #137ad7;    
-  border-color: #137ad7;    
+.btn-primary {
+  background-color: #295073;
+  border-color: #295073;
+}
+.btn-primary:hover {
+  background-color: #137ad7;
+  border-color: #137ad7;
 }
 
 .btn-secondary {
@@ -554,7 +561,7 @@ textarea#content {
   width: min-content;
   margin: 0 auto;
   }
-}  
+}
 
 /* SEARCH */
 .form-search {
@@ -594,7 +601,7 @@ textarea#content {
 
 .form-search input[type=submit] {
   float: none;
-  margin-bottom: 0; 
+  margin-bottom: 0;
 }
 
 
@@ -658,7 +665,7 @@ table {
     border-collapse: collapse;
 }
 
-table.admin, 
+table.admin,
 table.categories {
   max-width: 500px;
   margin: 0 auto;
@@ -747,15 +754,15 @@ p.alt {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-menu:before { content: '\f0c9'; } 
-.icon-search:before { content: '\e803'; } 
-.icon-comment:before { content: '\e800'; } 
-.icon-comment-empty:before { content: '\f0e5'; } 
-.icon-heart:before { content: '\e801'; } 
-.icon-heart-empty:before { content: '\e802'; } 
+.icon-menu:before { content: '\f0c9'; }
+.icon-search:before { content: '\e803'; }
+.icon-comment:before { content: '\e800'; }
+.icon-comment-empty:before { content: '\f0e5'; }
+.icon-heart:before { content: '\e801'; }
+.icon-heart-empty:before { content: '\e802'; }
 
-/* Same styles as .btn 
-   Repeated here as adding them to existing .btn class 
+/* Same styles as .btn
+   Repeated here as adding them to existing .btn class
    can prevent rules for button being processed. */
 input[type=file]::-webkit-file-upload-button {
   color: #fff;

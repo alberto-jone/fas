@@ -21,7 +21,7 @@
                     <a href="{{ url('login') }}" class="nav-item nav-link">Log in</a> /
                     <a href="{{ route('member.register') }}" class="nav-item nav-link">Register</a>
                 @else
-                    <a href="{{ url('member/' . Auth::guard('member')->id()) }}" class="nav-item nav-link">{{ Auth::guard('member')->user()->forename }}</a> /
+                    <span class="p-5 span-profile">{{ Auth::guard('member')->user()->forename }}</span>
                     <a href="{{ route('member.profile') }}" class="nav-item nav-link">Profile</a> /
                     @if (Auth::guard('member')->user()->role == 'admin')
                         <a href="{{ url('admin/index') }}" class="nav-item nav-link">Admin</a> /
