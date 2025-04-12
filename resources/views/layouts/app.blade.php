@@ -17,18 +17,21 @@
         <a class="skip-link" href="#content">Skip to content</a>
         <nav class="member-menu">
             <div class="container">
-                @if (session('id') == 0)
+                @if (!Auth::guard('member')->check())
                     <a href="{{ url('login') }}" class="nav-item nav-link">Log in</a> /
-                    <a href="{{ url('register') }}" class="nav-item nav-link">Register</a>
+                    <a href="{{ route('member.register') }}" class="nav-item nav-link">Register</a>
                 @else
-                    <a href="{{ url('member/' . session('id')) }}" class="nav-item nav-link">{{ session('forename') }}</a> /
-                    <a href="{{ url('member/' . session('id')) }}" class="nav-item nav-link">Profile</a> /
-                    @if (session('role') == 'admin')
+                    <a href="{{ url('member/' . Auth::guard('member')->id()) }}" class="nav-item nav-link">{{ Auth::guard('member')->user()->forename }}</a> /
+                    <a href="{{ url('member/' . Auth::guard('member')->id()) }}" class="nav-item nav-link">Profile</a> /
+                    @if (Auth::guard('member')->user()->role == 'admin')
                         <a href="{{ url('admin/index') }}" class="nav-item nav-link">Admin</a> /
                     @endif
+
                     <form method="POST" action="{{ route('member.logout') }}">
                         @csrf
-                        <button type="submit" class="nav-item nav-link" style="border:none; background:none; padding:0; margin:0; cursor:pointer;">Logout</button>
+                        {{-- <h2>Teste</h2> --}}
+                        {{-- <button type="submit" class="nav-item nav-link" style="border:none; background:none; padding:0; margin:0; cursor:pointer;">Logout</button> --}}
+                        <input type="submit" value="Logout" class="nav-item nav-link btn btn-sm btn-link">
                     </form>
                 @endif
             </div>
